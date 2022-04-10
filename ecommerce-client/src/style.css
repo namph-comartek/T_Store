@@ -1,0 +1,47 @@
+.hidden-loading {
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: #ffff;
+    position: fixed;
+    z-index: 99999999;
+    opacity: 0.3;
+}
+
+body {
+    font-family: 'Playfair Display', serif;
+}
+
+#collapsibleNavId {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-bottom {
+    background-color: #27ae60;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-sticky.sticky {
+    background-color: #27ae60;
+}
+
+.logo {
+    padding-left: 50px;
+}
+
+.hm-searchbox {
+    margin-top: 10px;
+}
+
+.header-middle-right {
+    margin-top: 10px;
+}
+
+.hm-minicart {
+    width: 10%;
+}

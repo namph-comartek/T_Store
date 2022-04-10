@@ -1,0 +1,66 @@
+.fix-text-item {
+    font-size: 13px;
+    color: #242424e3;
+    padding: 6px;
+    font-weight: 100;
+}
+
+.fix-link-color {
+    color: #242424;
+}
+
+.bg-light {
+    background-color: #27ae60!important;
+    font-size: 16px;
+    font-weight: 600!important;
+    padding: 10px 0 5px;
+    font-family: sans-serif;
+    color: black;
+}
+
+.navbar-brand {
+    padding-top: 0 !important;
+}
+
+.dropdown-item {
+    padding: 10px 15px !important;
+}
+
+.container .dropdown .dropdown-menu a:hover {
+    color: #fff;
+    background-color: #b91773;
+    border-color: #fff;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: #000000ad !important;
+}
+/* header-top */
+.phone-wrap{
+    font-weight:800;
+    margin-top: 1px;
+}
+.header-top{
+    height: 50px;
+}
+.header-top li{
+    padding-top: px;
+}
+.header-top-left{
+    margin-top: -50px;
+}
+.header-top-right{
+    margin-top: -50px;
+}
+/* header-middle */
+.header-middle{
+    height:100px;
+    padding: 1px;
+}
+.logo{
+    margin-top: -11px;
+}
+.col-lg-9 {
+    margin-top: 4px;
+
+}
