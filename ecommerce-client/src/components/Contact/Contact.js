@@ -54,30 +54,64 @@ export default class Contact extends Component {
               <div className="contact-page-side-content">
                 <h3 className="contact-page-title">Contact Us</h3>
                 <p className="contact-page-message mb-25">
-                  Claritas est etiam processus dynamicus, qui sequitur
-                  mutationem consuetudium lectorum. Mirum est notare quam
-                  littera gothica, quam nunc putamus parum claram anteposuerit
-                  litterarum formas human.
-                </p>
+                  T-STORE: Prestigious technology equipment system
+                  <br/>
+                  Main transacttion office
+                  <br/>
+                  No.4/1 lane 55 Huynh Thuc Khang - Dong Da - Ha Noi
+                  <br/>
+                  Tel: 090.44.224578 
+                  <br/>
+                  <h5>Description: <p>Located right next to the foot of VNPT Ha Noi building, intersection between Huynh Thuc Khang and Nguyen Chi Thanh intersection.</p></h5>
+                <br/>
+                  
+                  </p>
                 <div className="single-contact-block">
                   <h4>
                     <i className="fa fa-fax" /> Address
                   </h4>
-                  <p>FPT BTEC – Ha Noi - VN</p>
+                  <p> Address of branches of T-STORE.Vn
+                  <br/>
+                 <h6> Ha Noi: </h6>
+                  
+                  -Facility 1: No.4/1 lane 55 Huynh Thuc Khang - Dong Da - Ha Noi
+                  <br/>
+                  Tel: 02435190988 - 0965151509
+                  <br/>
+                  -Factory 2: 69 Kham Thien - Dong Da
+                  <br/>
+                  Tel: 0965151409
+                  
+                  <br/>
+                  <h6>Ho Chi Minh:</h6>
+                  
+                  -Facility 3: 779 Le Hong Phong - Ward 12 - District 10
+                  <br/>
+                  Tel: 0981009638 - 0981546483
+                  <br/>
+                  -Factory 4: 135 Nguyen Thai Son - Ward 4 - Go Vap District
+                  <br/>
+                  Tel: 0981548482 - 0981546483
+
+                  </p>
                 </div>
                 <div className="single-contact-block">
-                  <h4>
+                  {/* <h4>
                     <i className="fa fa-phone" /> Phone
-                  </h4>
-                  <p>Mobile: (+84) 123 456 789</p>
-                  <p>Hotline: 1009 678 456</p>
+                  </h4> */}
+                  <h4>Service Center</h4>
+
+                  <p> No.4/1 lane 55 Huynh Thuc Khang - Dong Da - Ha Noi</p>
+                  <p>Tel: 02439964587</p>
                 </div>
                 <div className="single-contact-block last-child">
                   <h4>
                     <i className="fa fa-envelope-o" /> Email
                   </h4>
-                  <p>admin@limupa.com</p>
-                  <p>support@limupa.com</p>
+                  <p>techstore@gmail.com</p>
+                  <h6>Thank you very much visiting our Website!</h6>
+                  <p>For any contact information, questions or requests for advice on services and products, please fill out the form below and send it to us. Sincerely thank!</p>
+
                 </div>
               </div>
             </div>

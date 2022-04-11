@@ -11,7 +11,7 @@ export default class FooterMiddle extends Component {
               <div className="col-lg-4 col-md-6">
                 <div className="footer-logo">
                   <img src="https://www.t-store.ch/skin/frontend/rwd/tamedia/images/tamedia_logo.png" alt="Footer Logo" />
-                  <p className="info">Hoài Nam</p>
+                  <p className="info">Technology Store</p>
                 </div>
                 <ul className="des">
                   <li>
@@ -24,7 +24,7 @@ export default class FooterMiddle extends Component {
                   </li>
                   <li>
                     <span>Email: </span>
-                    <a href="">namphbhaf190058@fpt.edu.vn</a>
+                    <a href="">techstore@gmail.com</a>
                   </li>
                 </ul>
               </div>
@@ -35,16 +35,16 @@ export default class FooterMiddle extends Component {
                   <h3 className="footer-block-title">Product</h3>
                   <ul>
                     <li>
-                      <a href="/">Prices drop</a>
+                      Prices drop
                     </li>
                     <li>
-                      <a href="/">New products</a>
+                      New products
                     </li>
                     <li>
-                      <a href="/">Best sales</a>
+                      Best sales
                     </li>
                     <li>
-                      <a href="/">Contact us</a>
+                      <a href="/contact">Contact us</a>
                     </li>
                   </ul>
                 </div>
@@ -56,17 +56,15 @@ export default class FooterMiddle extends Component {
                   <h3 className="footer-block-title">Our company</h3>
                   <ul>
                     <li>
-                      <a href="/">Delivery</a>
+                      Delivery
                     </li>
                     <li>
-                      <a href="/">Legal Notice</a>
+                     Legal Notice
                     </li>
                     <li>
-                      <a href="/">About us</a>
+                      <a href="/about">About us</a>
                     </li>
-                    <li>
-                      <a href="/">Contact us</a>
-                    </li>
+                    
                   </ul>
                 </div>
               </div>
@@ -81,26 +79,26 @@ export default class FooterMiddle extends Component {
                         <i className="fa fa-twitter" />
                       </a>
                     </li>
-                    <li className="rss">
+                    {/* <li className="rss">
                       <a href="https://rss.com/" data-toggle="tooltip" title="RSS">
                         <i className="fa fa-rss" />
                       </a>
-                    </li>
-                    <li className="google-plus">
+                    </li> */}
+                    {/* <li className="google-plus">
                       <a href="https://www.plus.google.com/discover" data-toggle="tooltip" title="Google Plus">
                         <i className="fa fa-google-plus" />
                       </a>
-                    </li>
+                    </li> */}
                     <li className="facebook">
                       <a href="https://www.facebook.com/" data-toggle="tooltip" title="Facebook">
                         <i className="fa fa-facebook" />
                       </a>
                     </li>
-                    <li className="youtube">
+                    {/* <li className="youtube">
                       <a href="https://www.youtube.com/" data-toggle="tooltip" title="Youtube">
                         <i className="fa fa-youtube" />
                       </a>
-                    </li>
+                    </li> */}
                     <li className="instagram">
                       <a href="https://www.instagram.com/" data-toggle="tooltip" title="Instagram">
                         <i className="fa fa-instagram" />

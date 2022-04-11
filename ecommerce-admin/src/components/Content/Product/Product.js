@@ -158,7 +158,7 @@ class Product extends Component {
                               <tr key={index}>
                                 <th scope="row">{index + 1}</th>
                                 <td>{item.nameProduct}</td>
-                                <td><p className="text-truncate" style={{ width: 300 }}>{item.description}</p></td>
+                                <td ><p className="text-truncate" style={{ width: 250}}>{item.description}</p></td>
                                 <td>{item.price}</td>
                                 <td>{item.numberAvailable}</td>
                                 {/* <td>{item.properties}</td> */}

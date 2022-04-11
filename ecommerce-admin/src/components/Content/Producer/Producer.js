@@ -100,14 +100,14 @@ class Producer extends Component {
         {/* Page Header*/}
         <header className="page-header">
           <div className="container-fluid">
-            <h2 className="no-margin-bottom">Producers</h2>
+            <h2 className="no-margin-bottom">Manufacturer</h2>
           </div>
         </header>
         {/* Breadcrumb*/}
         <div className="breadcrumb-holder container-fluid">
           <ul className="breadcrumb">
             <li className="breadcrumb-item"><Link to="/">Home</Link></li>
-            <li className="breadcrumb-item active">Producers</li>
+            <li className="breadcrumb-item active">manufacturer</li>
           </ul>
         </div>
         <section className="tables pt-3">
@@ -139,7 +139,7 @@ class Producer extends Component {
                           <tr>
                             <th>Number</th>
                             <th>Name</th>
-                            <th>Description</th>
+                            <th>Note</th>
                             <th>Image</th>
                             <th>Category</th>
                             <th style={{ textAlign: "center" }}>Active</th>

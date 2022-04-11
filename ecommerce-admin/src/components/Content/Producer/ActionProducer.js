@@ -139,14 +139,14 @@ class ActionProducer extends Component {
         </div>
         <header className="page-header">
           <div className="container-fluid">
-            <h2 className="no-margin-bottom">Forms Producer</h2>
+            <h2 className="no-margin-bottom">Forms Manufacturer</h2>
           </div>
         </header>
         {/* Breadcrumb*/}
         <div className="breadcrumb-holder container-fluid">
           <ul className="breadcrumb">
             <li className="breadcrumb-item"><a href="index.html">Home</a></li>
-            <li className="breadcrumb-item active">Producer</li>
+            <li className="breadcrumb-item active">Manufacturer</li>
           </ul>
         </div>
         {/* Forms Section*/}
@@ -169,7 +169,7 @@ class ActionProducer extends Component {
                       </div>
                       <div className="line" />
                       <div className="form-group row">
-                        <label className="col-sm-3 form-control-label">Description</label>
+                        <label className="col-sm-3 form-control-label">Note </label>
                         <div className="col-sm-9">
                           <input name="desc" onChange={this.handleChange} value={desc} type="text" placeholder="Note" className="form-control" />
                         </div>

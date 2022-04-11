@@ -157,13 +157,13 @@ class ActionCategory extends Component {
                       </div>
                       <div className="line" />
                       <div className="form-group row">
-                        <label className="col-sm-3 form-control-label">Description</label>
+                        <label className="col-sm-3 form-control-label">Note</label>
                         <div className="col-sm-9">
                           <input name="desc" onChange={this.handleChange} value={desc} type="text" placeholder="Note" className="form-control" />
                         </div>
                       </div>
-                      <div className="line" />
-                      <div className="form-group row">
+                      {/* <div className="line" /> */}
+                      {/* <div className="form-group row">
                         <label htmlFor="fileInput" className="col-sm-3 form-control-label">Image</label>
                         <div className="col-sm-9">
                         <input type="file" onChange={this.handleChangeImage} className="form-control-file" />
@@ -171,8 +171,8 @@ class ActionCategory extends Component {
                           <img src={image || 'http://via.placeholder.com/400x300'} id="output" className="fix-img" alt="avatar" />
                           </div> 
                        </div>
-                      </div>
-                      <div className="line" />
+                      </div> */}
+                      {/* <div className="line" /> */}
                       <div className="form-group row">
                         <label className="col-sm-3 form-control-label">Active</label>
                         <div className="col-sm-9">

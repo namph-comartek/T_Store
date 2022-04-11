@@ -20,7 +20,7 @@ class ProductOther extends Component {
             <div className="col-lg-12">
               <div className="li-section-title">
                 <h2>
-                  <span>Other products in the same category:</span>
+                  <span>Related products:</span>
                 </h2>
               </div>
               {/* <div className="row"> */}

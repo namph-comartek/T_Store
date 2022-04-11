@@ -139,8 +139,8 @@ class Category extends Component {
                           <tr>
                             <th>Number</th>
                             <th>Name</th>
-                            <th>Description</th>
-                            <th>Image</th>
+                            <th>Note</th>
+                            {/* <th>Image</th> */}
                             <th style={{ textAlign: "center" }}>Active</th>
                             <th style={{ textAlign: "center" }}>Action</th>
                           </tr>
@@ -152,11 +152,11 @@ class Category extends Component {
                                 <th scope="row">{index + 1}</th>
                                 <td>{item.nameCategory}</td>
                                 <td>{item.description}</td>
-                                <td style={{ textAlign: "center" }}>
+                                {/* <td style={{ textAlign: "center" }}>
                                     <div className="fix-cart2">
                                       <img src={item.image} className="fix-img2" alt="avatar" />
                                     </div>                 
-                                </td>
+                                </td> */}
                                 <td style={{ textAlign: "center" }}>{item.isActive ?
                                   <div className="i-checks">
                                     <input type="checkbox" checked={true} onChange={() => this.handleChangeCheckBox} className="checkbox-template" />

@@ -46,7 +46,7 @@ export default class AboutPage extends Component {
       <div className="row no-gutters">
         <div className="col-lg-3 col-md-6">
           {/* Begin Limupa Counter Area */}
-          <div className="limupa-counter white-smoke-bg">
+          {/* <div className="limupa-counter white-smoke-bg">
             <div className="container">
               <div className="counter-img">
                 <img src="https://i.ibb.co/QKXDBNM/1.png" alt="" />
@@ -61,10 +61,11 @@ export default class AboutPage extends Component {
               </div>
             </div>
           </div>
-          {/* limupa Counter Area End Here */}
+          
         </div>
         <div className="col-lg-3 col-md-6">
-          {/* Begin limupa Counter Area */}
+
+          
           <div className="limupa-counter gray-bg">
             <div className="counter-img">
               <img src="https://i.ibb.co/f1Zj6SL/2.png" alt="" />
@@ -78,10 +79,12 @@ export default class AboutPage extends Component {
               </div>
             </div>
           </div>
-          {/* limupa Counter Area End Here */}
+          
+
         </div>
         <div className="col-lg-3 col-md-6">
-          {/* Begin limupa Counter Area */}
+
+          
           <div className="limupa-counter white-smoke-bg">
             <div className="counter-img">
               <img src="https://i.ibb.co/vBktQgS/3.png" alt="" />
@@ -95,10 +98,11 @@ export default class AboutPage extends Component {
               </div>
             </div>
           </div>
-          {/* limupa Counter Area End Here */}
+          
         </div>
         <div className="col-lg-3 col-md-6">
-          {/* Begin limupa Counter Area */}
+
+          
           <div className="limupa-counter gray-bg">
             <div className="counter-img">
               <img src="https://i.ibb.co/z5t0Q7H/4.png" alt="" />
@@ -111,7 +115,7 @@ export default class AboutPage extends Component {
                 <span>COMPLETE PROJECTS</span>
               </div>
             </div>
-          </div>
+          </div> */}
           {/* limupa Counter Area End Here */}
         </div>
       </div>
@@ -122,13 +126,14 @@ export default class AboutPage extends Component {
   <div className="team-area pt-60 pt-sm-44">
     <div className="container">
       <div className="row">
-        <div className="col-12">
+        {/* <div className="col-12">
           <div className="li-section-title capitalize mb-25">
             <h2><span>our team</span></h2>
           </div>
-        </div>
+        </div> */}
       </div> {/* section title end */}
-      <div className="row">
+      
+      {/* <div className="row">
         <div className="col-lg-3 col-md-6 col-sm-6">
           <div className="team-member mb-60 mb-sm-30 mb-xs-30">
             <div className="team-thumb">
@@ -146,7 +151,8 @@ export default class AboutPage extends Component {
               </div>
             </div>
           </div>
-        </div> {/* end single team member */}
+        </div>
+         
         <div className="col-lg-3 col-md-6 col-sm-6">
           <div className="team-member mb-60 mb-sm-30 mb-xs-30">
             <div className="team-thumb">
@@ -164,7 +170,8 @@ export default class AboutPage extends Component {
               </div>
             </div>
           </div>
-        </div> {/* end single team member */}
+        </div>
+         
         <div className="col-lg-3 col-md-6 col-sm-6">
           <div className="team-member mb-30 mb-sm-60">
             <div className="team-thumb">
@@ -182,7 +189,8 @@ export default class AboutPage extends Component {
               </div>
             </div>
           </div>
-        </div> {/* end single team member */}
+        </div> 
+
         <div className="col-lg-3 col-md-6 col-sm-6">
           <div className="team-member mb-30 mb-sm-60 mb-xs-60">
             <div className="team-thumb">
@@ -200,8 +208,9 @@ export default class AboutPage extends Component {
               </div>
             </div>
           </div>
-        </div> {/* end single team member */}
-      </div>
+        </div> 
+        
+      </div> */}
     </div>
   </div>
 </div>
