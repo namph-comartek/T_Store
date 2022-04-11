@@ -22,7 +22,7 @@ export default class StaticHomeQC extends Component {
                   <span> $1209.00</span>
                 </p>
                 <div className="default-btn">
-                  <Link to="#" className="links">
+                  <Link to="./products/" className="links">
                     Shopping Now
                   </Link>
                 </div>

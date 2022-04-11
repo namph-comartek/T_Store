@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 export default class BannerRight extends Component {
   render() {
     return (
-      <div className="col-lg-4 col-md-4 text-center pt-xs-30">
+      <div className="col-lg-4 col-md-4 text-center pt-xs-30 bannerRight">
         <div className="li-banner">
           <Link tp="#">
             <img src="https://i.ibb.co/FHr1bng/1-1.jpg" alt="not found" />

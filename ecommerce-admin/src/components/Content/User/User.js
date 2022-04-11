@@ -139,7 +139,6 @@ class User extends Component {
                             <th>Number</th>
                             <th>Email</th>
                             <th>Name</th>
-                            <th style={{textAlign: "center"}}>Supper Admin</th>
                             <th style={{textAlign: "center"}}>Admin</th>
                             <th style={{textAlign: "center"}}>Staff</th>
                             <th style={{textAlign: "center"}}>User</th>

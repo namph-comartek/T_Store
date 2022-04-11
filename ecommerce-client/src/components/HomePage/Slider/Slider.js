@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import SliderLeft from './SliderLeft'
 import BannerRight from './BannerRight'
-
 export default class Slider extends Component {
   render() {
     return (

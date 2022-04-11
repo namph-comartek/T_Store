@@ -4,7 +4,7 @@ import './style.css';
 export default class BannerMiddle extends Component {
   render() {
     return (
-      <div className="li-static-banner" style={{ marginTop: -50 }}>
+      <div className="li-static-banner" style={{ marginTop: -45 }}>
         <div className="container">
           <div className="row">
             {/* Begin Single Banner Area */}
@@ -19,8 +19,8 @@ export default class BannerMiddle extends Component {
             {/* Begin Single Banner Area */}
             <div className="col-lg-4 col-md-4 text-center pt-xs-30">
               <div className="single-banner">
-                <Link to="#">
-                  <img src="https://i.ibb.co/6RLptfX/1-4.jpg" alt="Li's Static Banner" />
+                <Link to="./products/12">
+                  <img src="https://cdn.tgdd.vn/Files/2018/11/27/1134121/bannerlaptopthang12_800x450-600x400.png" alt="Li's Static Banner" />
                 </Link>
               </div>
             </div>
@@ -28,8 +28,8 @@ export default class BannerMiddle extends Component {
             {/* Begin Single Banner Area */}
             <div className="col-lg-4 col-md-4 text-center pt-xs-30">
               <div className="single-banner">
-                <Link to="#">
-                  <img src="https://i.ibb.co/0YQVK7Y/1-5.jpg" alt="Li's Static Banner" />
+                <Link to="/products/51">
+                  <img src="https://kenh14cdn.com/crop/640_360/203336854389633024/2021/9/16/photo1631778962938-1631778963244670900328.jpg" alt="Li's Static Banner" />
                 </Link>
               </div>
             </div>

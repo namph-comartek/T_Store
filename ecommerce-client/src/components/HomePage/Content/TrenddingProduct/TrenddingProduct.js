@@ -35,12 +35,12 @@ class TrenddingProduct extends Component {
               <div className="li-product-tab li-trending-product-tab">
                 <h2>
                   {/* <span>Trendding Products</span> */}
-                  <h4>Trendding Products</h4>
+                  <h5>LapTop</h5>
                 </h2>
                 <ul className="nav li-product-menu li-trending-product-menu">
-                  <li><a className="active" data-toggle="tab" href="#home1"><span>Sanai</span></a></li>
-                  <li><a data-toggle="tab" href="#home2"><span>Camera Accessories</span></a></li>
-                  <li><a data-toggle="tab" href="#home3"><span>XailStation</span></a></li>
+                  <li><a className="active" data-toggle="tab" href="#"><span>MacBook</span></a></li>
+                  <li><a data-toggle="tab" href="#home2"><span>SamSung</span></a></li>
+                  <li><a data-toggle="tab" href="#home3"><span>Dell</span></a></li>
                 </ul>
                 
               </div>
