@@ -52,7 +52,7 @@ export default class Contact extends Component {
           <div className="row">
             <div className="col-lg-5 offset-lg-1 col-md-12 order-1 order-lg-2">
               <div className="contact-page-side-content">
-                <h3 className="contact-page-title">Contact Us</h3>
+                <h3 className="contact-page-title">About Us</h3>
                 <p className="contact-page-message mb-25">
                   T-STORE: Prestigious technology equipment system
                   <br/>

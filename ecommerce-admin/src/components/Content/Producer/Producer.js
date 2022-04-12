@@ -116,7 +116,7 @@ class Producer extends Component {
               <div className="col-lg-12">
                 <div className="card">
                   <div className="card-header d-flex align-items-center">
-                    <h3 className="h4">Data Table Producers</h3>
+                    <h3 className="h4">Data Table Manufacturer</h3>
                     <button onClick={()=>this.downloadExcel()} style={{ border: 0, background: "white" }}> <i className="fa fa-file-excel-o"
                         style={{fontSize: 18, color: '#1d7044'}}> Excel</i></button>
                   </div>
@@ -139,7 +139,7 @@ class Producer extends Component {
                           <tr>
                             <th>Number</th>
                             <th>Name</th>
-                            <th>Note</th>
+                            {/* <th>Note</th> */}
                             <th>Image</th>
                             <th>Category</th>
                             <th style={{ textAlign: "center" }}>Active</th>
@@ -152,7 +152,7 @@ class Producer extends Component {
                               <tr key={index}>
                                 <th scope="row">{index + 1}</th>
                                 <td>{item.name}</td>
-                                <td>{item.description}</td>
+                                {/* <td>{item.description}</td> */}
                                 <td style={{ textAlign: "center" }}>
                                   <div className="fix-cart">
                                   <img src={item && item.image ? item.image : null} className="fix-img" alt="not found" />

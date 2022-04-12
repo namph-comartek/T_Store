@@ -62,11 +62,7 @@ class NavBar extends Component {
             <li><Link to="/orders"> <i className="icon icon-bill" />Orders</Link></li>
           </ul>
         }
-        <span className="heading">Extras</span>
-        <ul className="list-unstyled">
-          <li> <Link to="/"> <i className="icon-screen" />Abount </Link></li>
-          <li> <Link to="/"> <i className="icon-flask" />Help </Link></li>
-        </ul>
+      
       </nav>
     )
   }

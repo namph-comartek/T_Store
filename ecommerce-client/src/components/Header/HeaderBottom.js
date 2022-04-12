@@ -63,14 +63,14 @@ class HeaderBottom extends Component {
                           PRODUCTS
                         </Link>
                       </li>
-                      <li className="nav-item">
+                      {/* <li className="nav-item">
                         <Link onClick={() => this.loaddingPage()} className="nav-link" to="/about">
                           ABOUT
                         </Link>
-                      </li>
+                      </li> */}
                       <li className="nav-item">
                         <Link onClick={() => this.loaddingPage()} className="nav-link" to="/contact">
-                          CONTACT
+                          CONTACT US
                         </Link>
                       </li>
                     </ul>
