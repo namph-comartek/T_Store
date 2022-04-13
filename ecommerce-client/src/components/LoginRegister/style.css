@@ -8,3 +8,17 @@
 .fix-button-resetpw {
   border: 1px solid #f1e4e478 !important;
 }
+.login-form{
+  margin-left: 50px;
+  margin-bottom: 25px;
+}
+.register-form{
+  margin-left: 200px;
+ border-radius: 5px;
+ box-shadow: 0px 2px 1px 0px #AAAAAA;
+ margin-bottom: 50px;
+  
+}
+.summit{
+  margin-left: 210px;
+}

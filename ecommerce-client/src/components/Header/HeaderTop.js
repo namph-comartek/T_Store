@@ -29,7 +29,7 @@ class HeaderTop extends Component {
               <div className="header-top-left">
                 <ul className="phone-wrap">
                   <li>
-                    <span>Hotline:</span>
+                    <span>Telephone:</span>
                     <a href="/">(+84)964-205-406</a>
                   </li>
                 </ul>

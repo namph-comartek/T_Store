@@ -86,7 +86,7 @@ class Login extends Component {
           <p>
             Design by{" "}
             <a href="https://www.facebook.com/pham.nam7221" className="external">
-              Hoài Nam
+              T-SRORE
             </a>
           </p>
         </div>

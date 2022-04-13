@@ -59,8 +59,8 @@ class Register extends Component {
     return (
       <div className="col-sm-12 col-md-12 col-lg-6 col-xs-12">
         <form onSubmit={(event) => this.handleSubmit(event)}>
-          <div className="login-form">
-            <h4 className="login-title">Register</h4>
+          <div className="register-form">
+            <h4 className="register-title">Register</h4>
             <div className="row">
               <div className="col-md-12 mb-20">
                 <label>Name</label>
@@ -79,7 +79,8 @@ class Register extends Component {
                 <input onChange={this.handleChange} className="mb-0" type="password" name="repassword" placeholder="Confirm Password" />
               </div>
               <div className="col-12">
-                <button className="register-button mt-0">Register</button>
+                
+                <button className=" summit register-button mt-0">Register</button>
               </div>
             </div>
           </div>

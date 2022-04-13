@@ -10,9 +10,9 @@
 }
 
 .bg-light {
-    background-color: #27ae60!important;
+    background-color: #27ae60 !important;
     font-size: 16px;
-    font-weight: 600!important;
+    font-weight: 600 !important;
     padding: 10px 0 5px;
     font-family: sans-serif;
     color: black;
@@ -35,32 +35,11 @@
 .navbar-light .navbar-nav .nav-link {
     color: #000000ad !important;
 }
-/* header-top */
-.phone-wrap{
-    font-weight:800;
-    margin-top: 1px;
-}
-.header-top{
-    height: 50px;
-}
-.header-top li{
-    padding-top: px;
-}
-.header-top-left{
-    margin-top: -50px;
-}
-.header-top-right{
-    margin-top: -50px;
-}
-/* header-middle */
-.header-middle{
-    height:100px;
+
+.abc {
     padding: 1px;
 }
-.logo{
-    margin-top: -11px;
-}
-.col-lg-9 {
-    margin-top: 4px;
 
+.aa {
+    padding: 0px 30px;
 }
