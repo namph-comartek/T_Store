@@ -65,9 +65,10 @@ class Login extends Component {
   render() {
     const { email, password } = this.state;
     const { user } = this.props;
-    if (user !== null) {
-      return <Redirect to="/"> </Redirect>;
+    if (user) {
+      return <Redirect to="/"></Redirect>;
     }
+
     return (
       <div className="col-sm-12 col-md-12 col-xs-12 col-lg-6 mb-30">
         {" "}
@@ -105,7 +106,7 @@ class Login extends Component {
                 </div>{" "}
               </div>{" "}
               <div className="col-md-4 mt-10 mb-20 text-left text-md-right">
-                <Link to="/forgot-password"> Forgot Password? </Link>{" "}
+                <Link to="/forgot-password"> Forgotten pasward ? </Link>{" "}
               </div>{" "}
               <div className="col-md-4">
                 <button className="register-button mt-0 mb-3"> Login </button>{" "}

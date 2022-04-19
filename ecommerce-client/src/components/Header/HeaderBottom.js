@@ -2,7 +2,10 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { actFetchCategoriesRequest } from "../../redux/actions/category";
-import { actGetProductOfCategoryRequest, actFetchProductsRequest } from "../../redux/actions/products";
+import {
+  actGetProductOfCategoryRequest,
+  actFetchProductsRequest,
+} from "../../redux/actions/products";
 import { startLoading, doneLoading } from "../../utils/loading";
 import { actFetchProducersRequest } from "../../redux/actions/producer";
 
@@ -34,12 +37,27 @@ class HeaderBottom extends Component {
               <div className="hb-menu">
                 <nav className="navbar navbar-expand-sm navbar-light bg-light">
                   <Link className="navbar-brand" to="/">
-                    <img src="https://noithattinnghia.com/wp-content/uploads/2019/03/cropped-icon-home-cam.png" alt="not found" style={{ height: 30, width: 30 }} />
+                    <img
+                      src="https://noithattinnghia.com/wp-content/uploads/2019/03/cropped-icon-home-cam.png"
+                      alt="not found"
+                      style={{ height: 30, width: 30 }}
+                    />
                   </Link>
-                  <button className="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
+                  <button
+                    className="navbar-toggler d-lg-none"
+                    type="button"
+                    data-toggle="collapse"
+                    data-target="#collapsibleNavId"
+                    aria-controls="collapsibleNavId"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                  >
                     <span className="navbar-toggler-icon" />
                   </button>
-                  <div className="+collapse navbar-collapse" id="collapsibleNavId">
+                  <div
+                    className="+collapse navbar-collapse"
+                    id="collapsibleNavId"
+                  >
                     <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
                       <li className="nav-item active">
                         <Link className="nav-link" to="/">
@@ -47,19 +65,38 @@ class HeaderBottom extends Component {
                         </Link>
                       </li>
                       <li className="nav-item dropdown">
-                        <Link className="nav-link dropdown-toggle" to="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <Link
+                          className="nav-link dropdown-toggle"
+                          to="#"
+                          id="dropdownId"
+                          data-toggle="dropdown"
+                          aria-haspopup="true"
+                          aria-expanded="false"
+                        >
                           CATEGORIES
                         </Link>
-                        <div className="dropdown-menu" aria-labelledby="dropdownId">
+                        <div
+                          className="dropdown-menu"
+                          aria-labelledby="dropdownId"
+                        >
                           {categories.map((category, index) => (
-                            <Link key={index} className="dropdown-item" onClick={() => this.getIdCategory(category.id)} to={`/categories/${category.id}`}>
+                            <Link
+                              key={index}
+                              className="dropdown-item"
+                              onClick={() => this.getIdCategory(category.id)}
+                              to={`/categories/${category.id}`}
+                            >
                               {category.nameCategory}
                             </Link>
                           ))}
                         </div>
                       </li>
                       <li className="nav-item">
-                        <Link onClick={() => this.loaddingPage()} className="nav-link" to="/products">
+                        <Link
+                          onClick={() => this.loaddingPage()}
+                          className="nav-link"
+                          to="/products"
+                        >
                           PRODUCTS
                         </Link>
                       </li>
@@ -69,7 +106,11 @@ class HeaderBottom extends Component {
                         </Link>
                       </li> */}
                       <li className="nav-item">
-                        <Link onClick={() => this.loaddingPage()} className="nav-link" to="/contact">
+                        <Link
+                          onClick={() => this.loaddingPage()}
+                          className="nav-link"
+                          to="/contact"
+                        >
                           CONTACT US
                         </Link>
                       </li>

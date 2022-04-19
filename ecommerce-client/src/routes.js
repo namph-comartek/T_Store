@@ -6,7 +6,6 @@ import ContactPage from "./pages/ContactPage";
 import AboutPage from "./pages/AboutPage";
 import BlogPage from "./pages/BlogPage";
 import ProductDetailPage from "./pages/ProductDetailPage";
-import LoginRegisterPage from "./pages/LoginRegisterPage";
 import ShoppingCartPage from "./pages/ShoppingCartPage";
 import CheckOutPage from "./pages/CheckOutPage";
 import ShopCategoryPage from "./pages/ShopCategoryPage";
@@ -45,11 +44,17 @@ const routes = [{
         />,
     },
     {
-        path: "/login-register",
-        exact: false,
-        main: (match) => < LoginRegisterPage match = { match }
+        path: "/login",
+        exact: true,
+        main: (match) => < Login match = { match }
         />,
     },
+    // {
+    //     path: "/login-register",
+    //     exact: false,
+    //     main: (match) => < LoginRegisterPage match = { match }
+    //     />,
+    // },
     {
         path: "/forgot-password",
         exact: false,

@@ -5,11 +5,17 @@ import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { connect } from "react-redux";
 import { actAddCartRequest } from "../../redux/actions/cart";
-import { actAddRatingRequest, actFetchRatingsRequest } from "../../redux/actions/rating";
+import {
+  actAddRatingRequest,
+  actFetchRatingsRequest,
+} from "../../redux/actions/rating";
 import BeautyStars from "beauty-stars";
 import Modal from "react-modal";
 import callApi from "../../utils/apiCaller";
-import { actGetProductRequest, actFetchProductsOtherRequest } from "../../redux/actions/products";
+import {
+  actGetProductRequest,
+  actFetchProductsOtherRequest,
+} from "../../redux/actions/products";
 import Slider from "react-slick";
 import "./style.css";
 toast.configure();
@@ -23,8 +29,8 @@ const customStyles = {
     bottom: "auto",
     marginRight: "-50%",
     transform: "translate(-50%, -50%)",
-    width: "500px"
-  }
+    width: "500px",
+  },
 };
 class ProductViewDetail extends Component {
   constructor(props) {
@@ -33,7 +39,7 @@ class ProductViewDetail extends Component {
       quantity: 1,
       ratingPoint: 0,
       modalIsOpen: false,
-      textRating: ""
+      textRating: "",
     };
     this.openModal = this.openModal.bind(this);
     this.afterOpenModal = this.afterOpenModal.bind(this);
@@ -63,17 +69,20 @@ class ProductViewDetail extends Component {
     this.setState({ modalIsOpen: false });
   }
 
-  handleChangeRating = value => {
+  handleChangeRating = (value) => {
     this.setState({
-      ratingPoint: value
+      ratingPoint: value,
     });
   };
 
-  handleChange = event => {
+  handleChange = (event) => {
     let name = event.target.name;
-    let value = event.target.type === "checkbox" ? event.target.checked : event.target.value;
+    let value =
+      event.target.type === "checkbox"
+        ? event.target.checked
+        : event.target.value;
     this.setState({
-      [name]: value
+      [name]: value,
     });
   };
 
@@ -86,7 +95,7 @@ class ProductViewDetail extends Component {
     const newTextRating = textRating ? textRating : null;
     const data = {
       point: ratingPoint,
-      content: newTextRating
+      content: newTextRating,
     };
     if (!token) {
       return toast.error("Please login before write rating");
@@ -94,7 +103,7 @@ class ProductViewDetail extends Component {
     this.props.add_rating(productId, data, token);
     this.setState({
       modalIsOpen: false,
-      ratingPoint: 0
+      ratingPoint: 0,
     });
   };
 
@@ -104,7 +113,7 @@ class ProductViewDetail extends Component {
       return toast.error("You can only purchase up to 5 products");
     }
     this.setState({
-      quantity: ++quantity
+      quantity: ++quantity,
     });
   };
 
@@ -114,20 +123,24 @@ class ProductViewDetail extends Component {
       return toast.error("You can only min down to 1 product");
     }
     this.setState({
-      quantity: --quantity
+      quantity: --quantity,
     });
   };
 
-  addItemToCart = product => {
+  addItemToCart = (product) => {
     const { quantity } = this.state;
     this.props.addCart(product, quantity);
   };
   render() {
     const settings = {
-      customPaging: function(i) {
+      customPaging: function (i) {
         return (
           <Link to="#">
-            <img style={{ height: 50, width: "auto" }} src={product.gallery[i]} alt="not found" />
+            <img
+              style={{ height: 50, width: "auto" }}
+              src={product.gallery[i]}
+              alt="not found"
+            />
           </Link>
         );
       },
@@ -136,7 +149,7 @@ class ProductViewDetail extends Component {
       infinite: true,
       speed: 500,
       slidesToShow: 1,
-      slidesToScroll: 1
+      slidesToScroll: 1,
     };
     const { quantity, ratingPoint } = this.state;
     const { product, productRatings } = this.props;
@@ -144,7 +157,7 @@ class ProductViewDetail extends Component {
     let count = productRatings.length ? productRatings.length : 0;
     if (productRatings && productRatings.length > 0) {
       let totalRating = 0;
-      productRatings.forEach(item => {
+      productRatings.forEach((item) => {
         totalRating = totalRating + item.point;
       });
       sumRating = Math.round(totalRating / count);
@@ -161,9 +174,11 @@ class ProductViewDetail extends Component {
                 style={customStyles}
                 contentLabel="Example Modal"
               >
-                
-                <h4 ref={subtitle => (this.subtitle = subtitle)}>Review</h4>
-                <div className="modal-content" style={{ width: "auto", border: 0 }}>
+                <h4 ref={(subtitle) => (this.subtitle = subtitle)}>Review</h4>
+                <div
+                  className="modal-content"
+                  style={{ width: "auto", border: 0 }}
+                >
                   <div className="modal-body">
                     <h3 className="review-page-title">Write Your Review</h3>
                     <div className="modal-inner-area row">
@@ -182,7 +197,9 @@ class ProductViewDetail extends Component {
                                       activeColor={"#ed8a19"}
                                       inactiveColor={"#c1c1c1"}
                                       value={ratingPoint}
-                                      onChange={ratingPoint => this.handleChangeRating(ratingPoint)}
+                                      onChange={(ratingPoint) =>
+                                        this.handleChangeRating(ratingPoint)
+                                      }
                                     />
                                   </div>
                                 </p>
@@ -199,16 +216,27 @@ class ProductViewDetail extends Component {
                                 <div className="feedback-input">
                                   <div className="feedback-btn pb-15">
                                     <button
-                                      onClick={event => this.handleSubmitRating(event, product.id)}
+                                      onClick={(event) =>
+                                        this.handleSubmitRating(
+                                          event,
+                                          product.id
+                                        )
+                                      }
                                       className="btn mr-1"
-                                      style={{ background: "#e80f0f", color: "white" }}
+                                      style={{
+                                        background: "#e80f0f",
+                                        color: "white",
+                                      }}
                                     >
                                       Submit
                                     </button>
                                     <button
                                       onClick={this.closeModal}
                                       className="btn mr-1"
-                                      style={{ background: "#fed700", color: "white" }}
+                                      style={{
+                                        background: "#fed700",
+                                        color: "white",
+                                      }}
                                     >
                                       Close
                                     </button>
@@ -233,7 +261,11 @@ class ProductViewDetail extends Component {
                         ? product.gallery.map((item, index) => {
                             return (
                               <div key={index} className="fix-img-div-slick">
-                                <img className="fix-img-slick" src={item} alt="not found" />
+                                <img
+                                  className="fix-img-slick"
+                                  src={item}
+                                  alt="not found"
+                                />
                               </div>
                             );
                           })
@@ -266,7 +298,10 @@ class ProductViewDetail extends Component {
                           editable={false}
                         />
                       </div>
-                      <button className="fix-btn-review btn" onClick={this.openModal}>
+                      <button
+                        className="fix-btn-review btn"
+                        onClick={this.openModal}
+                      >
                         <li className="review-item">Review </li>
                       </button>
                     </ul>
@@ -281,7 +316,11 @@ class ProductViewDetail extends Component {
                   </div>
                   <div className="product-desc">
                     <p>
-                    <span dangerouslySetInnerHTML={{__html: product.description}}></span>
+                      <span
+                        dangerouslySetInnerHTML={{
+                          __html: product.description,
+                        }}
+                      ></span>
                     </p>
                   </div>
                   <div className="single-add-to-cart">
@@ -295,28 +334,46 @@ class ProductViewDetail extends Component {
                             value={quantity ? quantity : 1}
                             type="text"
                           />
-                          <div onClick={() => this.downItem()} className="dec qtybutton">
+                          <div
+                            onClick={() => this.downItem()}
+                            className="dec qtybutton"
+                          >
                             <i className="fa fa-angle-down" />
                           </div>
-                          <div onClick={() => this.upItem()} className="inc qtybutton">
+                          <div
+                            onClick={() => this.upItem()}
+                            className="inc qtybutton"
+                          >
                             <i className="fa fa-angle-up" />
                           </div>
                         </div>
                       </div>
-                      <div style={{ paddingTop: 13 }}>
-                        <Link
-                          onClick={() => this.addItemToCart(product)}
-                          to="#"
-                          className="add-to-cart"
-                        >
-                          Add to cart
-                        </Link>
+                      <div style={{ display: "flex" }}>
+                        <div style={{ paddingTop: 13 }}>
+                          <Link
+                            onClick={() => this.addItemToCart(product)}
+                            to="#"
+                            className="add-to-cart"
+                          >
+                            Add to cart
+                          </Link>
+                        </div>
+                        <div style={{ paddingTop: 13, marginLeft: "30px" }}>
+                          <Link
+                            onClick={() => this.addItemToCart(product)}
+                            to="/cart"
+                            className="add-to-cart"
+                          >
+                            Buy Now
+                          </Link>
+                        </div>
                       </div>
                     </form>
                   </div>
                   <span>
-                    (We have {product.numberAvailable ? product.numberAvailable : 0} products
-                    available)
+                    (We have{" "}
+                    {product.numberAvailable ? product.numberAvailable : 0}{" "}
+                    products available)
                   </span>
                   <div className="product-additional-info">
                     <div className="product-social-sharing">
@@ -357,13 +414,13 @@ class ProductViewDetail extends Component {
     );
   }
 }
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
     product: state.product,
-    productRatings: state.productRatings
+    productRatings: state.productRatings,
   };
 };
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
   return {
     addCart: (item, quantity) => {
       dispatch(actAddCartRequest(item, quantity));
@@ -371,15 +428,15 @@ const mapDispatchToProps = dispatch => {
     add_rating: (productId, rating, token) => {
       dispatch(actAddRatingRequest(productId, rating, token));
     },
-    get_product: productId => {
+    get_product: (productId) => {
       dispatch(actGetProductRequest(productId));
     },
     get_product_others: (q, categoryId) => {
       dispatch(actFetchProductsOtherRequest(q, categoryId));
     },
-    fetch_ratings: productId => {
+    fetch_ratings: (productId) => {
       dispatch(actFetchRatingsRequest(productId));
-    }
+    },
   };
 };
 export default connect(mapStateToProps, mapDispatchToProps)(ProductViewDetail);

@@ -4,12 +4,12 @@ import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import {
   actGetProductRequest,
-  actFetchProductsOtherRequest
+  actFetchProductsOtherRequest,
 } from "../../redux/actions/products";
 import { actAddCartRequest } from "../../redux/actions/cart";
 import {
   actFetchRatingsRequest,
-  actAddFavoriteRequest
+  actAddFavoriteRequest,
 } from "../../redux/actions/rating";
 import { startLoading, doneLoading } from "../../utils/loading";
 import { connect } from "react-redux";
@@ -23,7 +23,7 @@ class ProductSearchItem extends Component {
     super(props);
     this.state = {
       offset: 0,
-      quantity: 1
+      quantity: 1,
     };
   }
 
@@ -31,45 +31,45 @@ class ProductSearchItem extends Component {
     token = localStorage.getItem("_auth");
   }
 
-  upItem = quantity => {
+  upItem = (quantity) => {
     if (quantity >= 5) {
       toast.error("You can only purchase up to 5 products");
       return;
     }
     this.setState({
-      quantity: quantity + 1
+      quantity: quantity + 1,
     });
   };
-  downItem = quantity => {
+  downItem = (quantity) => {
     if (quantity <= 1) {
       return;
     }
     this.setState({
-      quantity: quantity - 1
+      quantity: quantity - 1,
     });
   };
-  handleChange = event => {
+  handleChange = (event) => {
     const name = event.target.name;
     const value =
       event.target.type === "checkbox"
         ? event.target.checked
         : event.target.value;
     this.setState({
-      [name]: value
+      [name]: value,
     });
   };
 
-  getInfoProduct = id => {
+  getInfoProduct = (id) => {
     this.props.getInfoProduct(id);
   };
 
-  addItemToCart = product => {
+  addItemToCart = (product) => {
     startLoading();
     this.props.addCart(product);
     doneLoading();
   };
 
-  addItemToFavorite = id => {
+  addItemToFavorite = (id) => {
     startLoading();
     if (!token) {
       return toast.error("Please login before add product to list favorites");
@@ -102,7 +102,7 @@ class ProductSearchItem extends Component {
     let count = 0;
     if (product.rating && product.rating.length > 0) {
       let totalRating = 0;
-      product.rating.map(item => {
+      product.rating.map((item) => {
         return count++, (totalRating = totalRating + item.point);
       });
       sumRating = Math.round(totalRating / count);
@@ -112,9 +112,7 @@ class ProductSearchItem extends Component {
         {/* single-product-wrap start */}
         <div className="single-product-wrap">
           <div className="fix-img-div product-image">
-            <Link
-              to={`/products/${product.id}`}
-            >
+            <Link to={`/products/${product.id}`}>
               <img
                 className="fix-img"
                 src={product.image}
@@ -142,9 +140,13 @@ class ProductSearchItem extends Component {
                   />
                 </div>
               </div>
-              <h4><Link className="product_name" to={`/products/${product.id}`}>{product.nameProduct}</Link></h4>
+              <h4>
+                <Link className="product_name" to={`/products/${product.id}`}>
+                  {product.nameProduct}
+                </Link>
+              </h4>
               <div className="price-box">
-                <span className="new-price" style={{color: 'red'}}>
+                <span className="new-price" style={{ color: "red" }}>
                   {formatNumber.format(product.price)}
                 </span>
               </div>
@@ -158,7 +160,7 @@ class ProductSearchItem extends Component {
                 </li>
                 <li>
                   <Link
-                    onClick={id => this.getInfoProduct(product.id)}
+                    onClick={(id) => this.getInfoProduct(product.id)}
                     to={`/products/${product.id}`}
                     title="quick view"
                     className="quick-view-btn"
@@ -170,7 +172,7 @@ class ProductSearchItem extends Component {
                 </li>
                 <li>
                   <Link
-                    onClick={id => this.addItemToFavorite(product.id)}
+                    onClick={(id) => this.addItemToFavorite(product.id)}
                     className="links-details"
                     to="#"
                     title="favorite"
@@ -227,7 +229,7 @@ class ProductSearchItem extends Component {
                         <div className="single-add-to-cart">
                           <form
                             className="cart-quantity"
-                            onSubmit={event =>
+                            onSubmit={(event) =>
                               this.addItemToCart2(event, getProduct)
                             }
                           >
@@ -256,12 +258,27 @@ class ProductSearchItem extends Component {
                               </div>
                             </div>
                             <button className="add-to-cart" type="submit">
-                              Add to cart
+                              <Link
+                                to="#"
+                                onClick={() => this.addItemToCart(product)}
+                              >
+                                Buy Now
+                              </Link>
                             </button>
                           </form>
                         </div>
                         <div className="product-additional-info pt-25">
-                        <li><Link onClick={(id) => this.addItemToFavorite(product.id)} className="links-details" to="#"><i className="fa fa-heart-o" /> Add to wishlist</Link></li>
+                          <li>
+                            <Link
+                              onClick={(id) =>
+                                this.addItemToFavorite(product.id)
+                              }
+                              className="links-details"
+                              to="#"
+                            >
+                              <i className="fa fa-heart-o" /> Add to wishlist
+                            </Link>
+                          </li>
                           <div className="product-social-sharing pt-25">
                             <ul>
                               <li className="facebook">
@@ -305,15 +322,15 @@ class ProductSearchItem extends Component {
   }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
-    getProduct: state.product
+    getProduct: state.product,
   };
 };
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
   return {
-    getProductDetail: id => {
+    getProductDetail: (id) => {
       dispatch(actGetProductRequest(id));
     },
     addCart: (item, quantity) => {
@@ -322,15 +339,15 @@ const mapDispatchToProps = dispatch => {
     fetch_products_other: (q, categoryId) => {
       dispatch(actFetchProductsOtherRequest(q, categoryId));
     },
-    getInfoProduct: id => {
+    getInfoProduct: (id) => {
       dispatch(actGetProductRequest(id));
     },
-    fetch_product_ratings: id => {
+    fetch_product_ratings: (id) => {
       dispatch(actFetchRatingsRequest(id));
     },
     addFavorite: (id, token) => {
       dispatch(actAddFavoriteRequest(id, token));
-    }
+    },
   };
 };
 export default connect(mapStateToProps, mapDispatchToProps)(ProductSearchItem);

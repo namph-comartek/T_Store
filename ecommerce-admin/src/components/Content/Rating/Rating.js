@@ -4,15 +4,15 @@ import MyFooter from "../../MyFooter/MyFooter";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 import Paginator from "react-js-paginator";
-import BeautyStars from 'beauty-stars';
+import BeautyStars from "beauty-stars";
 import "./style.css";
 import {
   actFetchRatingsRequest,
   actDeleteRatingRequest,
-  actFindRatingsRequest
+  actFindRatingsRequest,
 } from "../../../redux/actions/rating";
 import { connect } from "react-redux";
-import {exportExcel} from '../../../utils/exportExcel'
+import { exportExcel } from "../../../utils/exportExcel";
 const MySwal = withReactContent(Swal);
 
 let token;
@@ -22,7 +22,7 @@ class Rating extends Component {
     this.state = {
       searchText: "",
       total: 0,
-      currentPage: 1
+      currentPage: 1,
     };
   }
 
@@ -30,15 +30,18 @@ class Rating extends Component {
     this.fetch_reload_data();
   }
 
-  fetch_reload_data(){
-    token = localStorage.getItem('_auth');
-    this.props.fetch_rating(token).then(res => {
-      this.setState({
-        total: res.total
+  fetch_reload_data() {
+    token = localStorage.getItem("_auth");
+    this.props
+      .fetch_rating(token)
+      .then((res) => {
+        this.setState({
+          total: res.total,
+        });
+      })
+      .catch((err) => {
+        console.log(err);
       });
-    }).catch(err => {
-      console.log(err);  
-    })
   }
 
   pageChange(content) {
@@ -46,12 +49,12 @@ class Rating extends Component {
     const offset = limit * (content - 1);
     this.props.fetch_rating(token, offset);
     this.setState({
-      currentPage: content
+      currentPage: content,
     });
     window.scrollTo(0, 0);
   }
 
-  handleRemove = id => {
+  handleRemove = (id) => {
     MySwal.fire({
       title: "Are you sure?",
       text: "You won't be able to revert this!",
@@ -59,8 +62,8 @@ class Rating extends Component {
       showCancelButton: true,
       confirmButtonColor: "#3085d6",
       cancelButtonColor: "#d33",
-      confirmButtonText: "Yes"
-    }).then(async result => {
+      confirmButtonText: "Yes",
+    }).then(async (result) => {
       if (result.value) {
         await this.props.delete_rating(id, token);
         Swal.fire("Deleted!", "Your file has been deleted.", "success");
@@ -68,29 +71,29 @@ class Rating extends Component {
     });
   };
 
-  handleChange = event => {
+  handleChange = (event) => {
     const target = event.target;
     const value = target.type === "checkbox" ? target.checked : target.value;
     const name = target.name;
     this.setState({
-      [name]: value
+      [name]: value,
     });
   };
 
-  handleSubmit = event => {
+  handleSubmit = (event) => {
     event.preventDefault();
     const { searchText } = this.state;
-    this.props.find_ratings(token, searchText).then(res => {
+    this.props.find_ratings(token, searchText).then((res) => {
       this.setState({
-        total: res.total
-      })
-    })
+        total: res.total,
+      });
+    });
   };
 
   downloadExcel = () => {
-    const key = 'ratings'
-    exportExcel(key)
-  }
+    const key = "ratings";
+    exportExcel(key);
+  };
 
   render() {
     let { ratings } = this.props;
@@ -119,16 +122,27 @@ class Rating extends Component {
                 <div className="card">
                   <div className="card-header d-flex align-items-center">
                     <h3 className="h4">Data Table ratings</h3>
-                    <button onClick={()=>this.downloadExcel()} style={{ border: 0, background: "white" }}> <i className="fa fa-file-excel-o"
-                        style={{fontSize: 18, color: '#1d7044'}}> Excel</i></button>
+                    <button
+                      onClick={() => this.downloadExcel()}
+                      style={{ border: 0, background: "white" }}
+                    >
+                      {" "}
+                      <i
+                        className="fa fa-file-excel-o"
+                        style={{ fontSize: 18, color: "#1d7044" }}
+                      >
+                        {" "}
+                        Excel
+                      </i>
+                    </button>
                   </div>
                   <form
-                    onSubmit={event => this.handleSubmit(event)}
+                    onSubmit={(event) => this.handleSubmit(event)}
                     className="form-inline md-form form-sm mt-0"
                     style={{
                       justifyContent: "flex-end",
                       paddingTop: 5,
-                      paddingRight: 20
+                      paddingRight: 20,
                     }}
                   >
                     <div>
@@ -168,20 +182,29 @@ class Rating extends Component {
                                 return (
                                   <tr key={index}>
                                     <th scope="row">{index + 1}</th>
-                                    <td>{item.user && item.user.email ? item.user.email : ''}</td>
+                                    <td>
+                                      {item.user && item.user.email
+                                        ? item.user.email
+                                        : ""}
+                                    </td>
                                     <td>{item.products.nameProduct}</td>
-                                    <td> <p className="text-truncate" style={{ width: 300 }}>
-                                    {item.content}
-                                    </p>                               
-                                      </td>
+                                    <td>
+                                      {" "}
+                                      <p
+                                        className="text-truncate"
+                                        style={{ width: 300 }}
+                                      >
+                                        {item.content}
+                                      </p>
+                                    </td>
                                     <td style={{ textAlign: "center" }}>
-                                    <BeautyStars
-                                        activeColor={'#ed8a19'}
-                                        inactiveColor={'#c1c1c1'}
+                                      <BeautyStars
+                                        activeColor={"#ed8a19"}
+                                        inactiveColor={"#c1c1c1"}
                                         value={item.point}
-                                        editable = {false}
+                                        editable={false}
                                         size={15}
-                                    />
+                                      />
                                     </td>
                                     <td style={{ textAlign: "center" }}>
                                       <div>
@@ -191,7 +214,8 @@ class Rating extends Component {
                                             <i className="fa fa-edit"></i>
                                           </Link>
                                         </span> */}
-                                        <span title='Delete'
+                                        <span
+                                          title="Delete"
                                           onClick={() =>
                                             this.handleRemove(item.id)
                                           }
@@ -224,7 +248,7 @@ class Rating extends Component {
                     <Paginator
                       pageSize={10}
                       totalElements={total}
-                      onPageChangeCallback={e => {
+                      onPageChangeCallback={(e) => {
                         this.pageChange(e);
                       }}
                     />
@@ -241,13 +265,13 @@ class Rating extends Component {
   }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
-    ratings: state.ratings
+    ratings: state.ratings,
   };
 };
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
   return {
     fetch_rating: (token, offset) => {
       return dispatch(actFetchRatingsRequest(token, offset));
@@ -257,7 +281,7 @@ const mapDispatchToProps = dispatch => {
     },
     find_ratings: (token, searchText) => {
       return dispatch(actFindRatingsRequest(token, searchText));
-    }
+    },
   };
 };
 

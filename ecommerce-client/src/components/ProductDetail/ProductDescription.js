@@ -21,7 +21,7 @@ const customStyles = {
   },
 };
 
-const mailUrl = "https://www.facebook.com/?ref=tn_tnmn"; //https://limupa-shop-client.herokuapp.com/products/
+const mailUrl = "https://limupa-shop-client.herokuapp.com/products/"; //https://limupa-shop-client.herokuapp.com/products/
 class ProductDescription extends Component {
   constructor(props) {
     super(props);
@@ -84,12 +84,22 @@ class ProductDescription extends Component {
   };
 
   showCommentFb() {
-    return <div className="fb-comments" data-href={`${mailUrl}/${this.props.id}`} data-width="100%" data-numposts="5"></div>;
+    return (
+      <div
+        className="fb-comments"
+        data-href={`${mailUrl}/${this.props.id}`}
+        data-width="100%"
+        data-numposts="5"
+      ></div>
+    );
   }
 
   handleChange = (event) => {
     let name = event.target.name;
-    let value = event.target.type === "checkbox" ? event.target.checked : event.target.value;
+    let value =
+      event.target.type === "checkbox"
+        ? event.target.checked
+        : event.target.value;
     this.setState({
       [name]: value,
     });
@@ -131,10 +141,20 @@ class ProductDescription extends Component {
             <div key={index} className="row">
               <div className="col-sm-3">
                 <div className="fix-avatar-div">
-                  <img src={item.user && item.user.avatar ? item.user.avatar : "https://i.ibb.co/NCdx7FF/avatar-Default.png"} className="fix-avatar rounded" alt="notfound" />
+                  <img
+                    src={
+                      item.user && item.user.avatar
+                        ? item.user.avatar
+                        : "https://i.ibb.co/NCdx7FF/avatar-Default.png"
+                    }
+                    className="fix-avatar rounded"
+                    alt="notfound"
+                  />
                 </div>
                 <div className="review-block-name">
-                  <Link to="#">{item && item.user ? item.user.email : null}</Link>
+                  <Link to="#">
+                    {item && item.user ? item.user.email : null}
+                  </Link>
                 </div>
                 <div className="review-block-date">
                   <Moment format="YYYY-MM-DD">{item.createdAt}</Moment>
@@ -143,7 +163,15 @@ class ProductDescription extends Component {
               <div className="col-sm-9">
                 <div className="review-block-rate">
                   <div>
-                    <BeautyStars size={12} activeColor={"#ed8a19"} inactiveColor={"#c1c1c1"} value={item.point} onChange={(ratingPoint) => this.handleChangeRating(ratingPoint)} />
+                    <BeautyStars
+                      size={12}
+                      activeColor={"#ed8a19"}
+                      inactiveColor={"#c1c1c1"}
+                      value={item.point}
+                      onChange={(ratingPoint) =>
+                        this.handleChangeRating(ratingPoint)
+                      }
+                    />
                   </div>
                 </div>
                 <div className="review-block-description">{item.content}</div>
@@ -161,10 +189,20 @@ class ProductDescription extends Component {
             <div key={index} className="row">
               <div className="col-sm-3">
                 <div className="fix-avatar-div">
-                  <img src={item.user && item.user.avatar ? item.user.avatar : "https://i.ibb.co/NCdx7FF/avatar-Default.png"} className="fix-avatar rounded" alt="not found" />
+                  <img
+                    src={
+                      item.user && item.user.avatar
+                        ? item.user.avatar
+                        : "https://i.ibb.co/NCdx7FF/avatar-Default.png"
+                    }
+                    className="fix-avatar rounded"
+                    alt="not found"
+                  />
                 </div>
                 <div className="review-block-name">
-                  <Link to="#">{item && item.user ? item.user.email : null}</Link>
+                  <Link to="#">
+                    {item && item.user ? item.user.email : null}
+                  </Link>
                 </div>
                 <div className="review-block-date">
                   <Moment format="YYYY-MM-DD">{item.createdAt}</Moment>
@@ -173,7 +211,15 @@ class ProductDescription extends Component {
               <div className="col-sm-9" style={{ margin: "auto" }}>
                 <div className="review-block-rate">
                   <div>
-                    <BeautyStars size={12} activeColor={"#ed8a19"} inactiveColor={"#c1c1c1"} value={item.point} onChange={(ratingPoint) => this.handleChangeRating(ratingPoint)} />
+                    <BeautyStars
+                      size={12}
+                      activeColor={"#ed8a19"}
+                      inactiveColor={"#c1c1c1"}
+                      value={item.point}
+                      onChange={(ratingPoint) =>
+                        this.handleChangeRating(ratingPoint)
+                      }
+                    />
                   </div>
                 </div>
                 <div className="review-block-description">{item.content}</div>
@@ -239,9 +285,18 @@ class ProductDescription extends Component {
         <div className="container">
           <div className="row">
             <div className="col-lg-12">
-              <Modal isOpen={this.state.modalIsOpen} onAfterOpen={this.afterOpenModal} onRequestClose={this.closeModal} style={customStyles} contentLabel="Example Modal">
+              <Modal
+                isOpen={this.state.modalIsOpen}
+                onAfterOpen={this.afterOpenModal}
+                onRequestClose={this.closeModal}
+                style={customStyles}
+                contentLabel="Example Modal"
+              >
                 <h4 ref={(subtitle) => (this.subtitle = subtitle)}>Review</h4>
-                <div className="modal-content" style={{ width: "auto", border: 0 }}>
+                <div
+                  className="modal-content"
+                  style={{ width: "auto", border: 0 }}
+                >
                   <div className="modal-body">
                     <h3 className="review-page-title">Write Your Review</h3>
                     <div className="modal-inner-area row">
@@ -255,17 +310,34 @@ class ProductDescription extends Component {
                                 <p className="your-opinion">
                                   <label>Your Rating</label>
                                   <div>
-                                    <BeautyStars size={12} value={ratingPoint} onChange={(ratingPoint) => this.handleChangeRating(ratingPoint)} />
+                                    <BeautyStars
+                                      size={12}
+                                      value={ratingPoint}
+                                      onChange={(ratingPoint) =>
+                                        this.handleChangeRating(ratingPoint)
+                                      }
+                                    />
                                   </div>
                                 </p>
                                 <p className="feedback-form">
                                   <label htmlFor="feedback">Your Review</label>
-                                  <textarea onChange={this.handleChange} id="textRating" name="textRating" cols={45} rows={8} />
+                                  <textarea
+                                    onChange={this.handleChange}
+                                    id="textRating"
+                                    name="textRating"
+                                    cols={45}
+                                    rows={8}
+                                  />
                                 </p>
                                 <div className="feedback-input">
                                   <div className="feedback-btn pb-15">
                                     <button
-                                      onClick={(event) => this.handleSubmitRating(event, product.id)}
+                                      onClick={(event) =>
+                                        this.handleSubmitRating(
+                                          event,
+                                          product.id
+                                        )
+                                      }
                                       className="btn mr-1"
                                       style={{
                                         background: "#e80f0f",
@@ -309,9 +381,15 @@ class ProductDescription extends Component {
             </div>
           </div>
           <div className="tab-content">
-            <div id="description" className="tab-pane active show" role="tabpanel">
+            <div
+              id="description"
+              className="tab-pane active show"
+              role="tabpanel"
+            >
               <div className="product-description">
-                <span dangerouslySetInnerHTML={{ __html: product.description }}></span>
+                <span
+                  dangerouslySetInnerHTML={{ __html: product.description }}
+                ></span>
                 {this.showCommentFb()}
               </div>
             </div>
@@ -327,21 +405,48 @@ class ProductDescription extends Component {
                   <small>/ 5</small>
                 </h2>
                 <div>
-                  <BeautyStars size={12} editable={false} activeColor={"#ed8a19"} inactiveColor={"#c1c1c1"} value={showFixRating} onChange={(ratingPoint) => this.handleChangeRating(ratingPoint)} />
+                  <BeautyStars
+                    size={12}
+                    editable={false}
+                    activeColor={"#ed8a19"}
+                    inactiveColor={"#c1c1c1"}
+                    value={showFixRating}
+                    onChange={(ratingPoint) =>
+                      this.handleChangeRating(ratingPoint)
+                    }
+                  />
                 </div>
               </div>
             </div>
             <div className="col-sm-3">
               <div className="pull-left">
-                <div className="pull-left" style={{ width: "35px", lineHeight: 1 }}>
+                <div
+                  className="pull-left"
+                  style={{ width: "35px", lineHeight: 1 }}
+                >
                   <div style={{ height: "9px", margin: "5px 0" }}>
                     {" "}
-                    <img src="https://i.ibb.co/2KKnLBh/148839.png" style={{ height: 15 }} alt="not found" /> 5 <span className="glyphicon glyphicon-star" />
+                    <img
+                      src="https://i.ibb.co/2KKnLBh/148839.png"
+                      style={{ height: 15 }}
+                      alt="not found"
+                    />{" "}
+                    5 <span className="glyphicon glyphicon-star" />
                   </div>
                 </div>
                 <div className="pull-left" style={{ width: "180px" }}>
-                  <div className="progress" style={{ height: "9px", margin: "8px 0" }}>
-                    <div className="progress-bar progress-bar-success" role="progressbar" aria-valuenow={5} aria-valuemin={0} aria-valuemax={5} style={{ width: `${showFiveStart}%` }}>
+                  <div
+                    className="progress"
+                    style={{ height: "9px", margin: "8px 0" }}
+                  >
+                    <div
+                      className="progress-bar progress-bar-success"
+                      role="progressbar"
+                      aria-valuenow={5}
+                      aria-valuemin={0}
+                      aria-valuemax={5}
+                      style={{ width: `${showFiveStart}%` }}
+                    >
                       <span className="sr-only">80% Complete (danger)</span>
                     </div>
                   </div>
@@ -351,14 +456,32 @@ class ProductDescription extends Component {
                 </div>
               </div>
               <div className="pull-left">
-                <div className="pull-left" style={{ width: "35px", lineHeight: 1 }}>
+                <div
+                  className="pull-left"
+                  style={{ width: "35px", lineHeight: 1 }}
+                >
                   <div style={{ height: "9px", margin: "5px 0" }}>
-                    <img src="https://i.ibb.co/2KKnLBh/148839.png" style={{ height: 15 }} alt="not found" /> 4 <span className="glyphicon glyphicon-star" />
+                    <img
+                      src="https://i.ibb.co/2KKnLBh/148839.png"
+                      style={{ height: 15 }}
+                      alt="not found"
+                    />{" "}
+                    4 <span className="glyphicon glyphicon-star" />
                   </div>
                 </div>
                 <div className="pull-left" style={{ width: "180px" }}>
-                  <div className="progress" style={{ height: "9px", margin: "8px 0" }}>
-                    <div className="progress-bar progress-bar-primary" role="progressbar" aria-valuenow={4} aria-valuemin={0} aria-valuemax={5} style={{ width: `${showFourStart}%` }}>
+                  <div
+                    className="progress"
+                    style={{ height: "9px", margin: "8px 0" }}
+                  >
+                    <div
+                      className="progress-bar progress-bar-primary"
+                      role="progressbar"
+                      aria-valuenow={4}
+                      aria-valuemin={0}
+                      aria-valuemax={5}
+                      style={{ width: `${showFourStart}%` }}
+                    >
                       <span className="sr-only">80% Complete (danger)</span>
                     </div>
                   </div>
@@ -368,14 +491,32 @@ class ProductDescription extends Component {
                 </div>
               </div>
               <div className="pull-left">
-                <div className="pull-left" style={{ width: "35px", lineHeight: 1 }}>
+                <div
+                  className="pull-left"
+                  style={{ width: "35px", lineHeight: 1 }}
+                >
                   <div style={{ height: "9px", margin: "5px 0" }}>
-                    <img src="https://i.ibb.co/2KKnLBh/148839.png" style={{ height: 15 }} alt="not found" /> 3 <span className="glyphicon glyphicon-star" />
+                    <img
+                      src="https://i.ibb.co/2KKnLBh/148839.png"
+                      style={{ height: 15 }}
+                      alt="not found"
+                    />{" "}
+                    3 <span className="glyphicon glyphicon-star" />
                   </div>
                 </div>
                 <div className="pull-left" style={{ width: "180px" }}>
-                  <div className="progress" style={{ height: "9px", margin: "8px 0" }}>
-                    <div className="progress-bar progress-bar-info" role="progressbar" aria-valuenow={3} aria-valuemin={0} aria-valuemax={5} style={{ width: `${showThreeStart}%` }}>
+                  <div
+                    className="progress"
+                    style={{ height: "9px", margin: "8px 0" }}
+                  >
+                    <div
+                      className="progress-bar progress-bar-info"
+                      role="progressbar"
+                      aria-valuenow={3}
+                      aria-valuemin={0}
+                      aria-valuemax={5}
+                      style={{ width: `${showThreeStart}%` }}
+                    >
                       <span className="sr-only">80% Complete (danger)</span>
                     </div>
                   </div>
@@ -385,14 +526,32 @@ class ProductDescription extends Component {
                 </div>
               </div>
               <div className="pull-left">
-                <div className="pull-left" style={{ width: "35px", lineHeight: 1 }}>
+                <div
+                  className="pull-left"
+                  style={{ width: "35px", lineHeight: 1 }}
+                >
                   <div style={{ height: "9px", margin: "5px 0" }}>
-                    <img src="https://i.ibb.co/2KKnLBh/148839.png" style={{ height: 15 }} alt="not found" /> 2 <span className="glyphicon glyphicon-star" />
+                    <img
+                      src="https://i.ibb.co/2KKnLBh/148839.png"
+                      style={{ height: 15 }}
+                      alt="not found"
+                    />{" "}
+                    2 <span className="glyphicon glyphicon-star" />
                   </div>
                 </div>
                 <div className="pull-left" style={{ width: "180px" }}>
-                  <div className="progress" style={{ height: "9px", margin: "8px 0" }}>
-                    <div className="progress-bar progress-bar-warning" role="progressbar" aria-valuenow={2} aria-valuemin={0} aria-valuemax={5} style={{ width: `${showTwoStart}%` }}>
+                  <div
+                    className="progress"
+                    style={{ height: "9px", margin: "8px 0" }}
+                  >
+                    <div
+                      className="progress-bar progress-bar-warning"
+                      role="progressbar"
+                      aria-valuenow={2}
+                      aria-valuemin={0}
+                      aria-valuemax={5}
+                      style={{ width: `${showTwoStart}%` }}
+                    >
                       <span className="sr-only">80% Complete (danger)</span>
                     </div>
                   </div>
@@ -402,14 +561,32 @@ class ProductDescription extends Component {
                 </div>
               </div>
               <div className="pull-left">
-                <div className="pull-left" style={{ width: "35px", lineHeight: 1 }}>
+                <div
+                  className="pull-left"
+                  style={{ width: "35px", lineHeight: 1 }}
+                >
                   <div style={{ height: "9px", margin: "5px 0" }}>
-                    <img src="https://i.ibb.co/2KKnLBh/148839.png" style={{ height: 15 }} alt="not found" /> 1 <span className="glyphicon glyphicon-star" />
+                    <img
+                      src="https://i.ibb.co/2KKnLBh/148839.png"
+                      style={{ height: 15 }}
+                      alt="not found"
+                    />{" "}
+                    1 <span className="glyphicon glyphicon-star" />
                   </div>
                 </div>
                 <div className="pull-left" style={{ width: "180px" }}>
-                  <div className="progress" style={{ height: "9px", margin: "8px 0" }}>
-                    <div className="progress-bar progress-bar-danger" role="progressbar" aria-valuenow={1} aria-valuemin={0} aria-valuemax={5} style={{ width: `${showOneStart}%` }}>
+                  <div
+                    className="progress"
+                    style={{ height: "9px", margin: "8px 0" }}
+                  >
+                    <div
+                      className="progress-bar progress-bar-danger"
+                      role="progressbar"
+                      aria-valuenow={1}
+                      aria-valuemin={0}
+                      aria-valuemax={5}
+                      style={{ width: `${showOneStart}%` }}
+                    >
                       <span className="sr-only">80% Complete (danger)</span>
                     </div>
                   </div>
@@ -422,10 +599,16 @@ class ProductDescription extends Component {
           </div>
           <div className="row">
             <div className="col-sm-12">
-              <div className="review-block">{this.showAllRating(showProductRating, productRatings)}</div>
+              <div className="review-block">
+                {this.showAllRating(showProductRating, productRatings)}
+              </div>
             </div>
           </div>
-          <Link onClick={this.handleSubmitViewAllRating} className="fix-view-all" to="#">
+          <Link
+            onClick={this.handleSubmitViewAllRating}
+            className="fix-view-all"
+            to="#"
+          >
             <i>View all ratings</i>
           </Link>
           <button className="fix-btn-review btn" onClick={this.openModal}>

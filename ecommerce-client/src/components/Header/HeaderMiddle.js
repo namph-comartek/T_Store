@@ -20,7 +20,10 @@ class HeaderMiddle extends Component {
 
   handleChange = (event) => {
     const name = event.target.name;
-    const value = event.target.type === "checkbox" ? event.target.checked : event.target.value;
+    const value =
+      event.target.type === "checkbox"
+        ? event.target.checked
+        : event.target.value;
     this.setState({
       [name]: value,
     });
@@ -78,7 +81,11 @@ class HeaderMiddle extends Component {
             <div className="col-lg-3">
               <div className="logo pb-sm-30 pb-xs-30">
                 <Link onClick={() => this.loadingPage()} to="/">
-                  <img style={{ width: "22%" }} src="https://www.t-store.ch/skin/frontend/rwd/tamedia/images/tamedia_logo.png" alt="" />
+                  <img
+                    style={{ width: "22%" }}
+                    src="https://www.t-store.ch/skin/frontend/rwd/tamedia/images/tamedia_logo.png"
+                    alt=""
+                  />
                 </Link>
               </div>
             </div>
@@ -87,7 +94,13 @@ class HeaderMiddle extends Component {
             <div className="col-lg-9 pl-0 ml-sm-15 ml-xs-15">
               {/* Begin Header Middle Searchbox Area */}
               <form className="hm-searchbox">
-                <input name="textSearch" value={textSearch} type="text" onChange={this.handleChange} placeholder="Enter your search key ..." />
+                <input
+                  name="textSearch"
+                  value={textSearch}
+                  type="text"
+                  onChange={this.handleChange}
+                  placeholder="Enter your search key ..."
+                />
                 {/* <button className="li-btn" type="submit"></button> */}
                 <Link onClick={this.handleClick} to="/products/search">
                   <button className="li-btn" type="submit">
@@ -102,7 +115,9 @@ class HeaderMiddle extends Component {
                   {/* Begin Header Middle Wishlist Area */}
                   <li className="hm-wishlist">
                     <Link to="/product-favorites">
-                      <span className="cart-item-count wishlist-item-count">{count2}</span>
+                      <span className="cart-item-count wishlist-item-count">
+                        {count2}
+                      </span>
                       <i className="fa fa-heart-o" />
                     </Link>
                   </li>
@@ -113,7 +128,9 @@ class HeaderMiddle extends Component {
                       <div className="hm-minicart-trigger">
                         <span className="item-icon" />
                         <span className="item-text">
-                          <span className="cart-item-count">{count ? count : 0}</span>
+                          <span className="cart-item-count">
+                            {count ? count : 0}
+                          </span>
                         </span>
                       </div>
                     </Link>

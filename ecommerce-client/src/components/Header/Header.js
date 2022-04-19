@@ -1,15 +1,16 @@
-import React, { Component } from 'react'
-import HeaderTop from './HeaderTop'
-import HeaderMiddle from './HeaderMiddle'
-import HeaderBottom from './HeaderBottom'
-import HeaderMobile from './HeaderMobile'
+import React, { Component } from "react";
+import HeaderTop from "./HeaderTop";
+import HeaderMiddle from "./HeaderMiddle";
+import HeaderBottom from "./HeaderBottom";
+import HeaderMobile from "./HeaderMobile";
 
 export default class Header extends Component {
   render() {
     return (
       <header>
-        {/* Begin Header Top Area */}
         <HeaderTop></HeaderTop>
+        {/* Begin Header Top Area */}
+
         {/* End Header Top Area */}
 
         {/* Begin Header Middle Area */}
@@ -23,9 +24,7 @@ export default class Header extends Component {
         {/* Begin Header Mobile Menu Area */}
         <HeaderMobile></HeaderMobile>
         {/* End Header Mobile Menu Area */}
-
       </header>
-    )
+    );
   }
 }
-
