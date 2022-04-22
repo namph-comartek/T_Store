@@ -44,19 +44,19 @@ class HeaderBottom extends Component {
                     />
                   </Link>
                   <button
-                    className="navbar-toggler d-lg-none"
+                    class="navbar-toggler"
                     type="button"
                     data-toggle="collapse"
-                    data-target="#collapsibleNavId"
-                    aria-controls="collapsibleNavId"
+                    data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent"
                     aria-expanded="false"
                     aria-label="Toggle navigation"
                   >
-                    <span className="navbar-toggler-icon" />
+                    <span class="navbar-toggler-icon"></span>
                   </button>
                   <div
                     className="+collapse navbar-collapse"
-                    id="collapsibleNavId"
+                    id="navbarSupportedContent"
                   >
                     <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
                       <li className="nav-item active">
@@ -111,7 +111,7 @@ class HeaderBottom extends Component {
                           className="nav-link"
                           to="/contact"
                         >
-                          CONTACT US
+                          CONTACT
                         </Link>
                       </li>
                     </ul>

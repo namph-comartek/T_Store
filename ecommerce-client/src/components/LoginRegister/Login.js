@@ -38,6 +38,7 @@ class Login extends Component {
   handleSubmit = async (event) => {
     event.preventDefault();
     const { email, password, isVerified } = this.state;
+    console.log("aaaa", password, email, password, isVerified);
     //verifi captcha
     if (isVerified) {
       if (password.length < 6 || password.length > 32) {
@@ -70,7 +71,10 @@ class Login extends Component {
     }
 
     return (
-      <div className="col-sm-12 col-md-12 col-xs-12 col-lg-6 mb-30">
+      <div
+        className="col-sm-12 col-md-12 col-xs-12 col-lg-6 mb-30"
+        style={{ marginTop: "56px", marginLeft: "310px" }}
+      >
         {" "}
         {/* Login Form s*/}{" "}
         <form onSubmit={(event) => this.handleSubmit(event)}>

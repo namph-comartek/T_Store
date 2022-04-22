@@ -63,7 +63,10 @@ class Register extends Component {
   render() {
     const { name, email } = this.state;
     return (
-      <div className="col-sm-12 col-md-12 col-lg-6 col-xs-12">
+      <div
+        className="col-sm-12 col-md-12 col-lg-6 col-xs-12"
+        style={{ marginTop: "56px", marginLeft: "310px" }}
+      >
         <form onSubmit={(event) => this.handleSubmit(event)}>
           <div className="login-form">
             <h4 className="login-title">Register</h4>

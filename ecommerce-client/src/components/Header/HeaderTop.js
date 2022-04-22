@@ -99,7 +99,7 @@ class HeaderTop extends Component {
                           </Link>
                           <Link
                             onClick={this.logOut}
-                            to="/login-register"
+                            to="/login"
                             className="fix-text-item dropdown-item"
                             href="/"
                           >
